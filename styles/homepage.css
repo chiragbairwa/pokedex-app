@@ -1,4 +1,70 @@
 .homepage {
   height: 100vh;
-  background-color: black;
+  background-color: grey;
+}
+.header {
+  overflow: hidden;
+}
+/* .header > h1 {
+} */
+.header > input {
+  float: right;
+}
+
+.photo-name-container {
+  display: flex;
+  margin: 10em 0 0 20em;
+}
+
+.poke-bio {
+  margin-left: 30vw;
+}
+.slider {
+  position: absolute;
+  top: 30vh;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.slider > button {
+  border: 0;
+  padding: 15px;
+  margin-top: 10px;
+  font-size: larger;
+  background-color: transparent;
+}
+.slider > button:hover {
+  cursor: pointer;
+}
+.slider-btn-mid {
+  opacity: 0.75;
+}
+.slider-btn-low {
+  opacity: 0.5;
+}
+
+.poke-biodata {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  border: 1px solid red;
+}
+.poke-info {
+  border-right: 1px solid blue;
+  width: 40%;
+  height: 100%;
+}
+
+.poke-type {
+  margin: 20px 0 0 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 66fr);
+  column-gap: 100px;
+}
+.poke-type > div {
+  width: 100px;
+  height: 50px;
+  background-color: aqua;
 }
