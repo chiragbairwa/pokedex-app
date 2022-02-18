@@ -1,11 +1,3 @@
-import styles from '../styles/homepage.module.css'
-
-function Homepage() {
-  return (
-    <div className={styles.Homepage}>
-      <div className={styles.PhotoBackground}></div>
-    </div>
-  )
+export default function Homepage() {
+  return <div className="homepage"></div>
 }
-
-export default Homepage
