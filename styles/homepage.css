@@ -1,6 +1,5 @@
 .homepage {
   height: 100vh;
-  background-color: grey;
 }
 .header > h1 {
   margin-top: 0;
@@ -13,27 +12,43 @@
   position: absolute;
 }
 
-.homepage > img {
-  margin: 20px 0 0 10%;
+.search-bar > div > div {
+  height: 25vh;
+
+  overflow: hidden;
 }
-.bio-slider-container {
-  display: flex;
-  top: 30vh;
-  right: 40px;
-  position: absolute;
+.search-button {
+  background-color: transparent;
+  height: 45px;
+  border: none;
+  cursor: pointer;
+  margin-left: -40px;
+  z-index: 9;
 }
 
+.homepage > img {
+  margin: 20px 0 0 10%;
+  border: 1px solid red;
+}
 .poke-bio {
-  margin-right: 20em;
+  top: 30vh;
+  width: 200px;
+  right: 200px;
+  position: absolute;
+  border: 1px solid red;
 }
 .slider {
+  top: 30vh;
+  right: 40px;
   display: flex;
+  margin-left: 20em;
+  position: absolute;
   flex-direction: column;
 }
 .slider > button {
-  border: 0;
-  padding: 10px;
   margin: 5px;
+  width: 45px;
+  height: 45px;
   margin-top: 10px;
   font-size: larger;
   background-color: transparent;
@@ -41,10 +56,18 @@
 .slider > button:hover {
   cursor: pointer;
 }
-.slider-btn-mid {
+.slider-btn-2,
+.slider-btn-4 {
+  border: 0;
   opacity: 0.75;
 }
-.slider-btn-low {
+.slider-btn-3 {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.slider-btn-1,
+.slider-btn-5 {
+  border: 0;
   opacity: 0.5;
 }
 
@@ -69,8 +92,8 @@
   column-gap: 100px;
 }
 .poke-type > div {
-  padding: 10px 20px;
+  padding: 7px 15px;
   border-radius: 10px;
   margin-bottom: 20px;
-  background-color: aqua;
+  background-color: white;
 }

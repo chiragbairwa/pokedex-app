@@ -1,14 +1,19 @@
 import Header from './header'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import pokedex from '../public/pokedex'
 
-export default function Homepage() {
-  const [number, setNumber] = useState(1)
+/* react-color-extractor Used for Color extraction from image  */
+import { ColorExtractor } from 'react-color-extractor'
 
-  const imageSource =
-    'https://github.com/fanzeyi/pokemon.json/raw/master/images/'
-  let num = ''
+export default function Homepage() {
+  let imageSource =
+    'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/'
+
+  const [number, setNumber] = useState(1)
+  const [bgcolor, setbgcolor] = useState('rgb(132, 204, 180)')
+
   function numSort() {
+    let num = ''
     if (number < 10) {
       num = '00' + number
     } else if (number < 100) {
@@ -16,54 +21,51 @@ export default function Homepage() {
     } else {
       num = number
     }
-
     return num
   }
+  function imageUrl() {
+    return imageSource + numSort() + '.png'
+  }
+
+  // setbgcolor(result)
   return (
-    <div className="homepage">
+    <div
+      className="homepage"
+      style={{ backgroundColor: bgcolor, transition: 'background 0.5s' }}
+    >
       <Header></Header>
 
-      {/* Picture */}
-      <img
-        src={imageSource + numSort() + '.png'}
-        alt={`${pokedex[number - 1].id}`}
+      <ColorExtractor
+        src={imageUrl()}
+        getColors={(colors) => setbgcolor(colors[0])}
       />
+      {/* Picture */}
+      <img src={imageUrl()} alt={`${pokedex[number - 1].id}`} />
 
-      {/* Number & Name & Slider*/}
-      <div className="bio-slider-container">
-        <div className="poke-bio">
-          <h2>#{numSort()}</h2>
-          <h3>{pokedex[number - 1].name.english}</h3>
-        </div>
+      {/* Number & Name*/}
 
-        {/* Slider */}
-        <div className="slider">
-          <button
-            onClick={() => setNumber(number - 2)}
-            className="slider-btn-low"
-          >
-            {number - 2}
-          </button>
-          <button
-            onClick={() => setNumber(number - 1)}
-            className="slider-btn-mid"
-          >
-            {number - 1}
-          </button>
-          <button onClick={() => setNumber(number)}>{number}</button>
-          <button
-            onClick={() => setNumber(number + 1)}
-            className="slider-btn-mid"
-          >
-            {number + 1}
-          </button>
-          <button
-            onClick={() => setNumber(number + 2)}
-            className="slider-btn-low"
-          >
-            {number + 2}
-          </button>
-        </div>
+      <div className="poke-bio">
+        <h2>#{numSort()}</h2>
+        <h3>{pokedex[number - 1].name.english}</h3>
+      </div>
+
+      {/* Slider */}
+      <div className="slider">
+        <button onClick={() => setNumber(number - 2)} className="slider-btn-1">
+          {number - 2}
+        </button>
+        <button onClick={() => setNumber(number - 1)} className="slider-btn-2">
+          {number - 1}
+        </button>
+        <button onClick={() => setNumber(number)} className="slider-btn-3">
+          {number}
+        </button>
+        <button onClick={() => setNumber(number + 1)} className="slider-btn-4">
+          {number + 1}
+        </button>
+        <button onClick={() => setNumber(number + 2)} className="slider-btn-5">
+          {number + 2}
+        </button>
       </div>
 
       {/* Information */}
