@@ -4,11 +4,12 @@
 }
 
 .search-bar {
+  padding: 20px;
   top: 50px;
   right: 300px;
   display: flex;
-  flex-direction: column;
   position: absolute;
+  flex-direction: column;
 }
 .search-bar > input {
   border: none;
@@ -39,9 +40,17 @@
 }
 .searched-items > div:hover {
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0);
 }
 
-.search-bar > input:focus + .searched-items {
+.search-bar > input + .searched-items {
   display: block;
+}
+
+.searched-items > div:target {
+  background-color: aqua;
+}
+.search-bar > input:focus + .searched-items {
+  background-color: aqua;
+  /* display: none; */
 }

@@ -1,21 +1,13 @@
 // https://codedec.com/tutorials/how-to-implement-search-in-react-js-with-json/
-
 import pokedex from '../public/pokedex'
 import { useState, useEffect } from 'react'
 
-const Header = (props, { changeBySearch }) => {
+const Header = ({ changeBySearch }) => {
   const [searchTerm, setSearchTerm] = useState('')
-
-  useEffect(() => {
-    if (document) {
-      document.getElementsByClassName('search-bar-input').value = { searchTerm }
-    }
-  }, [])
 
   return (
     <div className="header">
       <h1>Pokedex</h1>
-      <h1>{props.data1}</h1>
       <div className="search-bar">
         <input
           type="text"
@@ -40,11 +32,8 @@ const Header = (props, { changeBySearch }) => {
             .map((val) => {
               return (
                 <div
-                  id={val.name.english}
-                  onClick={
-                    console.log(this.id)
-                    // changeBySearch(this.key)}
-                  }
+                  key={val.name.english}
+                  onClick={() => changeBySearch(val.id)}
                 >
                   {val.name.english}
                 </div>

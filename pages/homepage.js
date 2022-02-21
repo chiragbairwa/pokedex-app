@@ -1,5 +1,5 @@
 import Header from './header'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import pokedex from '../public/pokedex'
 
 /* react-color-extractor Used for Color extraction from image  */
@@ -11,7 +11,11 @@ export default function Homepage() {
 
   const [number, setNumber] = useState(1)
   const [bgcolor, setbgcolor] = useState('rgb(132, 204, 180)')
-
+  // useEffect(() => {
+  //   if (window) {
+  //     document.getElementsByClassName('searched-items').style.display = 'none'
+  //   }
+  // })
   function numSort() {
     let num = ''
     if (number < 10) {
@@ -27,15 +31,7 @@ export default function Homepage() {
     return imageSource + numSort() + '.png'
   }
   const changeBySearch = (gotSearchedName) => {
-    // pokedex.filter((val) => {
-    //   if (gotSearchedName == '') {
-    //   } else if (
-    //     val.name.english.toLowerCase().includes(gotSearchedName.toLowerCase())
-    //   ) {
-    //     setNumber(val.id)
-    //   }
-    // })
-    console.log(gotSearchedName)
+    setNumber(gotSearchedName)
   }
 
   return (
