@@ -1,0 +1,47 @@
+.header > h1 {
+  margin-top: 0;
+  padding: 20px 0 0 50px;
+}
+
+.search-bar {
+  top: 50px;
+  right: 300px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.search-bar > input {
+  border: none;
+  font-size: 600;
+  padding: 15px 20px;
+  height: fit-content;
+  border-radius: 12px;
+}
+
+.searched-items {
+  z-index: 3;
+  display: none;
+  cursor: pointer;
+  margin-top: 10px;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  flex-direction: column;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.searched-items > div {
+  height: 40px;
+  border-radius: 12px;
+  padding: 0.5em 0 0 1em;
+}
+.searched-items > div:hover {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.search-bar > input:focus + .searched-items {
+  display: block;
+}

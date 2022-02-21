@@ -26,14 +26,24 @@ export default function Homepage() {
   function imageUrl() {
     return imageSource + numSort() + '.png'
   }
+  const changeBySearch = (gotSearchedName) => {
+    // pokedex.filter((val) => {
+    //   if (gotSearchedName == '') {
+    //   } else if (
+    //     val.name.english.toLowerCase().includes(gotSearchedName.toLowerCase())
+    //   ) {
+    //     setNumber(val.id)
+    //   }
+    // })
+    console.log(gotSearchedName)
+  }
 
-  // setbgcolor(result)
   return (
     <div
       className="homepage"
       style={{ backgroundColor: bgcolor, transition: 'background 0.5s' }}
     >
-      <Header></Header>
+      <Header changeBySearch={changeBySearch}></Header>
 
       <ColorExtractor
         src={imageUrl()}
@@ -82,7 +92,7 @@ export default function Homepage() {
             <p>Defence: {pokedex[number - 1].base.Defense}</p>
           </div>
           <div>
-            <p>hello: {pokedex[number - 1].base['Sp. Attack']}</p>
+            <p>Sp. Attack: {pokedex[number - 1].base['Sp. Attack']}</p>
           </div>
           <div>
             <p>Sp. Defense: {`${pokedex[number - 1].base['Sp. Defense']}`}</p>
