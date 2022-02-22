@@ -1,21 +1,17 @@
 import Header from './header'
 import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
 import pokedex from '../public/pokedex'
 
 /* react-color-extractor Used for Color extraction from image  */
 import { ColorExtractor } from 'react-color-extractor'
 
 export default function Homepage() {
-  let imageSource =
-    'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/'
+  let imageSource = '/pokemons/'
 
   const [number, setNumber] = useState(1)
   const [bgcolor, setbgcolor] = useState('rgb(132, 204, 180)')
-  // useEffect(() => {
-  //   if (window) {
-  //     document.getElementsByClassName('searched-items').style.display = 'none'
-  //   }
-  // })
+
   function numSort() {
     let num = ''
     if (number < 10) {
@@ -30,9 +26,7 @@ export default function Homepage() {
   function imageUrl() {
     return imageSource + numSort() + '.png'
   }
-  const changeBySearch = (gotSearchedName) => {
-    setNumber(gotSearchedName)
-  }
+  const changeBySearch = (gotSearchedName) => setNumber(gotSearchedName)
 
   return (
     <div
@@ -46,7 +40,14 @@ export default function Homepage() {
         getColors={(colors) => setbgcolor(colors[0])}
       />
       {/* Picture */}
-      <img src={imageUrl()} alt={`${pokedex[number - 1].id}`} />
+      <div className="poke-image">
+        <Image
+          src={imageUrl()}
+          alt={`${pokedex[number - 1].id}`}
+          width={400}
+          height={400}
+        />
+      </div>
 
       {/* Number & Name*/}
 

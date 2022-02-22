@@ -21,7 +21,6 @@
 
 .searched-items {
   z-index: 3;
-  display: none;
   cursor: pointer;
   margin-top: 10px;
   max-height: 400px;
@@ -41,16 +40,4 @@
 .searched-items > div:hover {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0);
-}
-
-.search-bar > input + .searched-items {
-  display: block;
-}
-
-.searched-items > div:target {
-  background-color: aqua;
-}
-.search-bar > input:focus + .searched-items {
-  background-color: aqua;
-  /* display: none; */
 }

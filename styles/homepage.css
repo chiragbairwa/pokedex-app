@@ -2,7 +2,8 @@
   height: 100vh;
 }
 
-.homepage > img {
+.poke-image {
+  width: fit-content;
   margin: 40px 0 0 15%;
   border: 1px solid red;
 }
