@@ -1,10 +1,15 @@
 .homepage {
   height: 100vh;
 }
-
+.poke-HW {
+  position: absolute;
+  top: 30vh;
+  left: 10vw;
+  margin-right: 30px;
+}
 .poke-image {
   width: fit-content;
-  margin: 40px 0 0 15%;
+  margin: 40px 0 0 20vw;
   border: 1px solid red;
 }
 .poke-bio {
@@ -13,6 +18,16 @@
   right: 200px;
   position: absolute;
   border: 1px solid red;
+}
+.type-container {
+  display: flex;
+  width: fit-content;
+}
+.type {
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: white;
 }
 .slider {
   top: 30vh;
@@ -30,7 +45,10 @@
   font-size: larger;
   background-color: transparent;
 }
-.slider > button:hover {
+.slider-btn-1:hover,
+.slider-btn-2:hover,
+.slider-btn-4:hover,
+.slider-btn-5:hover {
   cursor: pointer;
 }
 .slider-btn-2,
@@ -39,8 +57,11 @@
   opacity: 0.75;
 }
 .slider-btn-3 {
-  border: 1px solid black;
   border-radius: 10px;
+  border: 1px solid black;
+}
+.slider-btn-3:hover {
+  cursor: default;
 }
 .slider-btn-1,
 .slider-btn-5 {
