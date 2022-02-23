@@ -7,7 +7,7 @@ const Header = ({ changeBySearch }) => {
   const [displayDiv, setDisplayDiv] = useState('block')
   return (
     <div className="header">
-      <h1>Pokedex</h1>
+      <h1>Pokédex</h1>
       <div className="search-bar">
         <input
           type="text"
@@ -28,6 +28,8 @@ const Header = ({ changeBySearch }) => {
                   .includes(searchTerm.toLowerCase())
               ) {
                 return val
+              } else if (val.id == searchTerm) {
+                return val
               }
             })
             .map((val) => {
@@ -38,11 +40,9 @@ const Header = ({ changeBySearch }) => {
                     changeBySearch(val.id)
                     setDisplayDiv('none')
                   }}
-                  style={{
-                    display: `${displayDiv}`,
-                  }}
+                  style={{ display: `${displayDiv}` }}
                 >
-                  {val.name.english}
+                  {val.name.english} ({val.id})
                 </div>
               )
             })}

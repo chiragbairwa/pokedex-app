@@ -1,11 +1,11 @@
 .header > h1 {
   margin-top: 0;
-  padding: 20px 0 0 50px;
+  padding: 50px 0 0 60px;
 }
 
 .search-bar {
   padding: 20px;
-  top: 50px;
+  top: 30px;
   right: 300px;
   display: flex;
   position: absolute;
@@ -29,7 +29,7 @@
   flex-direction: column;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .searched-items > div {

@@ -9,23 +9,25 @@
 }
 .poke-image {
   width: fit-content;
-  margin: 40px 0 0 20vw;
-  border: 1px solid red;
+  margin: 40px 0 0 25vw;
 }
 .poke-bio {
-  top: 30vh;
-  width: 200px;
-  right: 200px;
+  /* width: 200px; */
   position: absolute;
-  border: 1px solid red;
+  top: 30vh;
+  left: 70vw;
+}
+.poke-bio > h1 {
+  margin: 0;
 }
 .type-container {
   display: flex;
   width: fit-content;
 }
 .type {
-  margin-right: 5px;
+  display: flex;
   padding: 5px;
+  margin-right: 5px;
   border-radius: 50%;
   background-color: white;
 }
@@ -75,21 +77,22 @@
   display: flex;
   position: absolute;
   bottom: 0;
-  border: 1px solid red;
 }
 .poke-info {
-  border-right: 1px solid blue;
-  width: 40%;
-  height: 100%;
+  width: 45%;
+  padding: 0 0 0 60px;
 }
-
-.poke-type {
+.poke-info > p {
+  font-weight: 600;
+}
+.poke-stats {
   margin: 20px 0 0 80px;
   display: grid;
-  grid-template-columns: repeat(3, 66fr);
   column-gap: 100px;
+  grid-template-columns: repeat(3, 66fr);
 }
-.poke-type > div {
+.poke-stats > div {
+  width: 10em;
   padding: 0 10px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -97,5 +100,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px) saturate(170%);
+  background-color: rgba(255, 255, 255, 0.25);
 }

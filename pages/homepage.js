@@ -1,8 +1,7 @@
 import Header from './header'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import pokedex from '../public/pokedex'
-import pokedex1 from '../public/pokedex1'
 
 /* react-color-extractor Used for Color extraction from image  */
 import { ColorExtractor } from 'react-color-extractor'
@@ -10,13 +9,6 @@ import { ColorExtractor } from 'react-color-extractor'
 export default function Homepage() {
   const [number, setNumber] = useState(1)
   const [bgcolor, setbgcolor] = useState('rgb(132, 204, 180)')
-  const [button, setButton] = useState([
-    'block',
-    'block',
-    'block',
-    'block',
-    'block',
-  ])
 
   let imageSource = '/pokemons/'
   function numSort() {
@@ -34,20 +26,11 @@ export default function Homepage() {
     return imageSource + numSort() + '.png'
   }
   const changeBySearch = (gotSearchedName) => setNumber(gotSearchedName)
-  const buttonDisable = () => {
-    // if (number <= 1) setButton(['none', 'none', 'block', 'block', 'block'])
-    // else if (number == 1)
-    //   setButton(['none', 'block', 'block', 'block', 'block'])
-    // else if (number == 808)
-    //   setButton(['block', 'block', 'block', 'block', 'none'])
-    // else if (number == 809)
-    //   setButton(['block', 'block', 'block', 'none', 'none'])
-    // else setButton(['block', 'block', 'block', 'block', 'block'])
-  }
+
   return (
     <div
       className="homepage"
-      style={{ backgroundColor: bgcolor, transition: 'background 0.5s' }}
+      style={{ backgroundColor: bgcolor, transition: 'background 0.1s' }}
     >
       <Header changeBySearch={changeBySearch}></Header>
 
@@ -58,8 +41,12 @@ export default function Homepage() {
 
       {/* Height & Weight */}
       <div className="poke-HW">
-        <p>Height : {pokedex1.pokemon[number - 1].height}</p>
-        <p>Weight : {pokedex1.pokemon[number - 1].weight}</p>
+        <p>
+          Height: <b>{pokedex[number - 1].profile.height}</b>
+        </p>
+        <p>
+          Weight: <b>{pokedex[number - 1].profile.weight}</b>
+        </p>
       </div>
       {/* Picture */}
       <div className="poke-image">
@@ -68,14 +55,17 @@ export default function Homepage() {
           width={400}
           height={400}
           alt={`${pokedex[number - 1].id}`}
+          priority
         />
       </div>
 
       {/* Number & Name*/}
 
       <div className="poke-bio">
-        <h2>#{numSort()}</h2>
-        <h3>{pokedex[number - 1].name.english}</h3>
+        <h1>#{numSort()}</h1>
+
+        <h2>{pokedex[number - 1].name.english}</h2>
+
         <div className="type-container">
           {pokedex[number - 1].type.map((val) => {
             return (
@@ -85,7 +75,7 @@ export default function Homepage() {
                   width={40}
                   height={40}
                   alt="type"
-                  optimized
+                  priority
                 ></Image>
               </div>
             )
@@ -98,9 +88,7 @@ export default function Homepage() {
         <button
           onClick={() => {
             setNumber(number - 2)
-            buttonDisable()
           }}
-          style={{ display: button[0] }}
           className="slider-btn-1"
         >
           {number - 2}
@@ -108,9 +96,7 @@ export default function Homepage() {
         <button
           onClick={() => {
             setNumber(number - 1)
-            buttonDisable()
           }}
-          style={{ display: button[1] }}
           className="slider-btn-2"
         >
           {number - 1}
@@ -119,9 +105,7 @@ export default function Homepage() {
         <button
           onClick={() => {
             setNumber(number + 1)
-            buttonDisable()
           }}
-          style={{ display: button[3] }}
           className="slider-btn-4"
         >
           {number + 1}
@@ -129,9 +113,7 @@ export default function Homepage() {
         <button
           onClick={() => {
             setNumber(number + 2)
-            buttonDisable()
           }}
-          style={{ display: button[4] }}
           className="slider-btn-5"
         >
           {number + 2}
@@ -140,8 +122,11 @@ export default function Homepage() {
 
       {/* Information */}
       <div className="poke-biodata">
-        <div className="poke-info"></div>
-        <div className="poke-type">
+        <div className="poke-info">
+          <h2>Information</h2>
+          <p>{pokedex[number - 1].description}</p>
+        </div>
+        <div className="poke-stats">
           <div>
             <p>Hp : {pokedex[number - 1].base.HP}</p>
           </div>
