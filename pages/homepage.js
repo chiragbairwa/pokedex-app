@@ -10,7 +10,11 @@ export default function Homepage() {
   const [number, setNumber] = useState(1)
   const [bgcolor, setbgcolor] = useState('rgb(132, 204, 180)')
 
-  let imageSource = '/pokemons/'
+  let imageSource =
+    'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/'
+  let thumbSource =
+    'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/thumbnails/'
+
   function numSort() {
     let num = ''
     if (number < 10) {
@@ -25,6 +29,9 @@ export default function Homepage() {
   function imageUrl() {
     return imageSource + numSort() + '.png'
   }
+  function thumbUrl() {
+    return thumbSource + numSort() + '.png'
+  }
   const changeBySearch = (gotSearchedName) => setNumber(gotSearchedName)
 
   return (
@@ -35,7 +42,7 @@ export default function Homepage() {
       <Header changeBySearch={changeBySearch}></Header>
 
       <ColorExtractor
-        src={imageUrl()}
+        src={thumbUrl()}
         getColors={(colors) => setbgcolor(colors[0])}
       />
 
@@ -50,12 +57,12 @@ export default function Homepage() {
       </div>
       {/* Picture */}
       <div className="poke-image">
-        <Image
+        <img
           src={imageUrl()}
           width={400}
           height={400}
           alt={`${pokedex[number - 1].id}`}
-          priority
+          priority="true"
         />
       </div>
 
