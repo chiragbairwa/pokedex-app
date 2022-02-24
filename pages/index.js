@@ -11,11 +11,6 @@ export default function Home() {
           content="Pokédex | Search your favourite Pokémon using this webapp"
         />
         <link rel="icon" href="/pokeball3.ico" />
-        <link
-          href="/fonts/Bangers-Regular.ttf"
-          rel="stylesheet"
-          type="text/css"
-        ></link>
       </Head>
 
       <Homepage></Homepage>

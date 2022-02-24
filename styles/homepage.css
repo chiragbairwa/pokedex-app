@@ -12,25 +12,30 @@
   margin: 40px 0 0 25vw;
 }
 .poke-bio {
-  /* width: 200px; */
   position: absolute;
   top: 30vh;
   left: 70vw;
 }
 .poke-bio > h1 {
   margin: 0;
+  font-size: 3em;
+}
+.poke-bio > h2 {
+  margin: 0 0 20px 0;
+  font-size: 2em;
 }
 .type-container {
   display: flex;
   width: fit-content;
 }
 .type {
-  display: flex;
   padding: 5px;
+  display: flex;
   margin-right: 5px;
   border-radius: 50%;
   background-color: white;
 }
+
 .slider {
   top: 30vh;
   right: 40px;

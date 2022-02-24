@@ -69,13 +69,16 @@ export default function Homepage() {
         <div className="type-container">
           {pokedex[number - 1].type.map((val) => {
             return (
-              <div className="type">
+              <div
+                className="type"
+                key={val + ' ' + pokedex[number - 1].name.english}
+              >
                 <Image
                   src={`/types/${val}.png`}
                   width={40}
                   height={40}
                   alt="type"
-                  priority
+                  className="type-image"
                 ></Image>
               </div>
             )
@@ -123,7 +126,7 @@ export default function Homepage() {
       {/* Information */}
       <div className="poke-biodata">
         <div className="poke-info">
-          <h2>Information</h2>
+          <h2>Information :</h2>
           <p>{pokedex[number - 1].description}</p>
         </div>
         <div className="poke-stats">
