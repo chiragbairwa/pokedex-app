@@ -1,0 +1,96 @@
+// :root {
+//   --clr-primary: #ee6532;
+//   --clr-body: #333;
+//   --clr-bg: #ddd;
+// }
+// .content {
+//   display: none;
+// }
+
+// @media only screen and(max-width:768px) {
+//   .content {
+//     display: block;
+//     padding: 1em;
+//     width: max-content;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//   }
+
+//   button svg {
+//     width: 24px;
+//     height: 24px;
+//   }
+
+//   .search-bar-mob {
+//     --size: 50px;
+//     border: 2px solid white;
+//     display: flex;
+//     border-radius: 100vmax;
+//     height: var(--size);
+//     width: var(--size);
+//     will-change: width;
+//     padding: 3px;
+//     position: relative;
+//     overflow: hidden;
+//     transition: width 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.15);
+
+//     &__input {
+//       border: 0;
+//       background: 0;
+//       flex-grow: 1;
+//       font-size: 1.5rem;
+//       padding: 0 0.5em;
+//       /* an old centering vertically trick that only works if you have one line of text */
+//       /* because of padding we nedd to subtract it */
+//       // line-height: var(--size);
+//       line-height: calc(var(--size) - 3px);
+//       opacity: 0;
+//       cursor: pointer;
+//       transition: opacity 0.3s ease-in-out;
+
+//       &:focus {
+//         outline: none;
+//       }
+//     }
+
+//     &__submit {
+//       cursor: pointer;
+//       border: 0;
+//       background: 0;
+//       border-radius: 50%;
+//       width: calc(var(--size) - 10px);
+//       height: calc(var(--size) - 10px);
+//       margin-left: auto;
+//       transition: background 0.3s ease-in-out;
+//     }
+
+//     /* the magic */
+//     /* if any child within gaining foucs we can use it to style our parent accordingly */
+//     &:focus-within {
+//       width: 100%;
+//       /* can't use nesting here */
+//       .search-bar-mob__submit {
+//         background-color: var(--clr-primary);
+//       }
+
+//       .search-bar-mob__submit:focus,
+//       .search-bar-mob__submit:hover {
+//         outline: none;
+//         box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+//       }
+
+//       .search-bar-mob__submit svg {
+//         stroke: #fff;
+//       }
+
+//       .search-bar-mob__input {
+//         opacity: 1;
+//         cursor: initial;
+//         /* don't mess with search icon */
+//         /* give it a background-color to see whats happenning */
+//         width: calc(100% - calc(var(--size) - 5px));
+//       }
+//     }
+//   }
+// }
