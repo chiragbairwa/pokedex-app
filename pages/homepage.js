@@ -37,7 +37,7 @@ export default function Homepage() {
   return (
     <div
       className="homepage"
-      style={{ backgroundColor: bgcolor, transition: 'background 0.1s' }}
+      style={{ backgroundColor: bgcolor, transition: 'background 0.5s' }}
     >
       <Header changeBySearch={changeBySearch}></Header>
 
@@ -56,15 +56,13 @@ export default function Homepage() {
         </p>
       </div>
       {/* Picture */}
-      <div className="poke-image">
-        <img
-          src={imageUrl()}
-          width={400}
-          height={400}
-          alt={`${pokedex[number - 1].id}`}
-          priority="true"
-        />
-      </div>
+
+      <img
+        src={imageUrl()}
+        alt={`${pokedex[number - 1].id}`}
+        priority="true"
+        className="poke-image"
+      />
 
       {/* Number & Name*/}
 
@@ -132,29 +130,33 @@ export default function Homepage() {
 
       {/* Information */}
       <div className="poke-biodata">
+        <div className="poke-stats">
+          <div>
+            <div>
+              <p>Hp : {pokedex[number - 1].base.HP}</p>
+            </div>
+            <div>
+              <p>Attack: {pokedex[number - 1].base.Attack}</p>
+            </div>
+            <div>
+              <p>Defence: {pokedex[number - 1].base.Defense}</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>Sp. Att: {pokedex[number - 1].base['Sp. Attack']}</p>
+            </div>
+            <div>
+              <p>Sp. Def: {`${pokedex[number - 1].base['Sp. Defense']}`}</p>
+            </div>
+            <div>
+              <p>Speed: {pokedex[number - 1].base.Speed}</p>
+            </div>
+          </div>
+        </div>
         <div className="poke-info">
           <h2>Information :</h2>
           <p>{pokedex[number - 1].description}</p>
-        </div>
-        <div className="poke-stats">
-          <div>
-            <p>Hp : {pokedex[number - 1].base.HP}</p>
-          </div>
-          <div>
-            <p>Attack: {pokedex[number - 1].base.Attack}</p>
-          </div>
-          <div>
-            <p>Defence: {pokedex[number - 1].base.Defense}</p>
-          </div>
-          <div>
-            <p>Sp. Attack: {pokedex[number - 1].base['Sp. Attack']}</p>
-          </div>
-          <div>
-            <p>Sp. Defense: {`${pokedex[number - 1].base['Sp. Defense']}`}</p>
-          </div>
-          <div>
-            <p>Speed: {pokedex[number - 1].base.Speed}</p>
-          </div>
         </div>
       </div>
     </div>

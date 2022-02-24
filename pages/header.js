@@ -48,6 +48,32 @@ const Header = ({ changeBySearch }) => {
             })}
         </div>
       </div>
+
+      {/* <div class="content">
+        <div class="search-bar-mob">
+          <input
+            class="search-bar-mob__input"
+            type="text"
+            placeholder="search..."
+            aria-label="search"
+          />
+          <button class="search-bar-mob__submit" aria-label="submit search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div> */}
     </div>
   )
 }
