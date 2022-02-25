@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url(../public/fonts/Nunito.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
 html,
 body {
   height: 100vh;
@@ -5,7 +12,8 @@ body {
   margin: 0;
   padding: 0;
   color: white;
-  font-family: cursive, roboto, sans-serif, -apple-system;
+  font-family: -apple-system, BlinkMacSystemFont, 'Nunito', 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a {

@@ -1,6 +1,6 @@
 .homepage {
   height: 100vh;
-  overflow: scroll;
+  overflow: auto;
 }
 .poke-HW {
   position: absolute;

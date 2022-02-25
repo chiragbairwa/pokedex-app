@@ -10,7 +10,7 @@ const Header = ({ changeBySearch }) => {
       <h1>Pokédex</h1>
       <div className="search-bar">
         <input
-          type="text"
+          type="search"
           placeholder="Search Name/Number"
           onClick={() => setDisplayDiv('block')}
           onChange={(e) => {

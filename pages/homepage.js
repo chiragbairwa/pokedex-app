@@ -59,7 +59,7 @@ export default function Homepage() {
 
       <img
         src={imageUrl()}
-        alt={`${pokedex[number - 1].id}`}
+        alt={`${pokedex[number - 1].name.english}`}
         priority="true"
         className="poke-image"
       />
@@ -82,7 +82,7 @@ export default function Homepage() {
                   src={`/types/${val}.png`}
                   width={40}
                   height={40}
-                  alt="type"
+                  alt={val}
                   className="type-image"
                 ></Image>
               </div>
